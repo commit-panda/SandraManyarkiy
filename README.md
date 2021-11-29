@@ -3,7 +3,7 @@
 - 🌱 I’m currently learning Java 
 - C# and .NET next
 - //💞️ I’m looking to collaborate on ...
-- 📫 How to reach me @manyaro on Twitter🦄
+- 📫 How to reach me @manya_101 on Twitter🦄
 
 <!---
 SandraManyarkiy/SandraManyarkiy is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
