@@ -1,7 +1,8 @@
 - 👋 Hi, I’m @SandraManyarkiy
-- 👀 I’m interested in game development 
-- 🌱 I’m currently learning Java 
-- C# and .NET next
+- 👀 I’m interested in game development
+- HTML, CSS, Java, C# done and dusted
+- 🌱 I’m currently learning Node.js 
+- Python next
 - //💞️ I’m looking to collaborate on ...
 - 📫 How to reach me @manya_101 on Twitter🦄
 
