@@ -4,7 +4,7 @@
 - 🌱 I’m currently learning Node.js 
 - Python next
 - //💞️ I’m looking to collaborate on ...
-- 📫 How to reach me @manya_101 on Twitter🦄
+- 📫 How to reach me...
 
 <!---
 SandraManyarkiy/SandraManyarkiy is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
