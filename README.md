@@ -1,4 +1,4 @@
-- 👋 Hi, I’m @SandraManyarkiy
+- 👋 Hey! Sandra here
 - 👀 I’m interested in game logic, game development using Unity and Visual Studio
 - I have experience with HTML, CSS, PHP, C# and Java
 - 🌱 I am currently learning Laravel
