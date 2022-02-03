@@ -3,7 +3,7 @@
 - I have experience with HTML, CSS, PHP, C# and Java
 - 🌱 I am currently learning Laravel
 - Python next
-- //💞️ I’m looking to collaborate on ...
+- //💞️ I’m looking to collaborate on any project that seeks to solve a problem using gamification
 - //📫 How to reach me...
 
 <!---
