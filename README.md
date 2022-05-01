@@ -1,7 +1,7 @@
 - 👋 Hey! Sandra here
-- 👀 I’m interested in game logic, game development using Unity and Visual Studio
+- 👀 I’m interested in game logic, game development 
 - I have experience with HTML, CSS, PHP, C# and Java
-- 🌱 I am currently learning Laravel
+- 🌱 I am currently learning JavaScript
 - Python next
 - //💞️ I’m looking to collaborate on...
 - //📫 How to reach me...
