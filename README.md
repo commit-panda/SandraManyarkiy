@@ -1,8 +1,8 @@
 - 👋 Hey! Sandra here
 - 👀 I’m interested in game logic, game development 
-- I have experience with HTML, CSS, PHP, C# and Java
-- 🌱 I am currently learning JavaScript
-- Python next
+- Front-End and Back-End Developer
+- 🌱 Currently learning Laravel
+- //
 - //💞️ I’m looking to collaborate on...
 - //📫 How to reach me...
 
