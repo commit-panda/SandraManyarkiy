@@ -1,7 +1,7 @@
-- 👋 Hey! Sandra here
-- 👀 I’m interested in game logic, game development 
-- Front-End and Back-End Developer
-- 🌱 Currently learning Laravel
+- 👋 Hi there!
+- 👀 I’m interested in game development 
+- I am a Front-End and Back-End Developer
+- 🌱 I am currently learning Wordpress
 <!----💞️ I’m looking to collaborate on...
 -📫 How to reach me...
 
