@@ -1,688 +1,462 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sandra Manyarkiy - Software Engineer</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>18th Century Monarchs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&display=swap" rel="stylesheet">
     <style>
-      :root {
-        --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-        --accent-gradient: linear-gradient(45deg, #ff6b9d, #c471ed, #12c2e9);
-        --glass-bg: rgba(255, 255, 255, 0.1);
-        --glass-border: rgba(255, 255, 255, 0.2);
-        --text-primary: #ffffff;
-        --text-secondary: rgba(255, 255, 255, 0.8);
-        --shadow-glow: 0 8px 32px rgba(31, 38, 135, 0.37);
-      }
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: 'Inter', sans-serif;
-        min-height: 100vh;
-        background: var(--primary-gradient);
-        background-attachment: fixed;
-        overflow-x: hidden;
-        scroll-behavior: smooth;
-      }
-
-      /* Custom scrollbar */
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-
-      ::-webkit-scrollbar-track {
-        background: rgba(255, 255, 255, 0.1);
-      }
-
-      ::-webkit-scrollbar-thumb {
-        background: var(--accent-gradient);
-        border-radius: 10px;
-      }
-
-      /* Animated background particles */
-      .particles {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        z-index: 1;
-      }
-
-      .particle {
-        position: absolute;
-        width: 4px;
-        height: 4px;
-        background: rgba(255, 255, 255, 0.3);
-        border-radius: 50%;
-        animation: float 6s ease-in-out infinite;
-      }
-
-      .particle:nth-child(1) { left: 10%; animation-delay: 0s; }
-      .particle:nth-child(2) { left: 20%; animation-delay: 1s; }
-      .particle:nth-child(3) { left: 30%; animation-delay: 2s; }
-      .particle:nth-child(4) { left: 40%; animation-delay: 3s; }
-      .particle:nth-child(5) { left: 50%; animation-delay: 4s; }
-      .particle:nth-child(6) { left: 60%; animation-delay: 5s; }
-      .particle:nth-child(7) { left: 70%; animation-delay: 0.5s; }
-      .particle:nth-child(8) { left: 80%; animation-delay: 1.5s; }
-      .particle:nth-child(9) { left: 90%; animation-delay: 2.5s; }
-
-      @keyframes float {
-        0%, 100% {
-          transform: translateY(100vh) scale(0);
-        }
-        10% {
-          transform: translateY(90vh) scale(1);
-        }
-        90% {
-          transform: translateY(-10vh) scale(1);
-        }
-        100% {
-          transform: translateY(-100vh) scale(0);
-        }
-      }
-
-      /* Enhanced Banner */
-      .banner {
-        width: 100%;
-        height: 100vh;
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      /* Glassmorphism navbar */
-      .navbar {
-        width: 90%;
-        max-width: 1200px;
-        margin: auto;
-        padding: 20px 30px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        position: fixed;
-        top: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 1000;
-        background: var(--glass-bg);
-        backdrop-filter: blur(20px);
-        border: 1px solid var(--glass-border);
-        border-radius: 20px;
-        box-shadow: var(--shadow-glow);
-        transition: all 0.3s ease;
-      }
-
-      .navbar:hover {
-        background: rgba(255, 255, 255, 0.15);
-        transform: translateX(-50%) translateY(-2px);
-      }
-
-      .logo {
-        width: 50px;
-        height: 50px;
-        cursor: pointer;
-        border-radius: 50%;
-        transition: transform 0.3s ease;
-      }
-
-      .logo:hover {
-        transform: rotate(360deg);
-      }
-
-      .navbar ul {
-        display: flex;
-        list-style: none;
-        gap: 2rem;
-      }
-
-      .navbar ul li a {
-        text-decoration: none;
-        color: var(--text-primary);
-        font-weight: 500;
-        font-size: 0.9rem;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        padding: 8px 16px;
-        border-radius: 10px;
-        transition: all 0.3s ease;
-        position: relative;
-      }
-
-      .navbar ul li a:hover {
-        background: rgba(255, 255, 255, 0.1);
-        transform: translateY(-2px);
-      }
-
-      /* Enhanced hero section */
-      .content {
-        text-align: center;
-        color: var(--text-primary);
-        z-index: 10;
-        animation: fadeInUp 1s ease-out;
-      }
-
-      .content h1 {
-        font-size: clamp(3rem, 8vw, 5rem);
-        font-weight: 700;
-        margin-bottom: 1rem;
-        background: linear-gradient(45deg, #fff, #f093fb, #12c2e9);
-        background-size: 200% 200%;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        animation: gradient-text 3s ease infinite;
-      }
-
-      @keyframes gradient-text {
-        0%, 100% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-      }
-
-      .content .subtitle {
-        font-size: 1.2rem;
-        margin-bottom: 2rem;
-        color: var(--text-secondary);
-        font-weight: 300;
-        line-height: 1.6;
-      }
-
-      .cta-buttons {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        flex-wrap: wrap;
-        margin-top: 2rem;
-      }
-
-      .btn-modern {
-        padding: 15px 30px;
-        border: none;
-        border-radius: 50px;
-        font-weight: 600;
-        font-size: 0.9rem;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-        text-decoration: none;
-        display: inline-block;
-      }
-
-      .btn-primary {
-        background: var(--accent-gradient);
-        color: white;
-        box-shadow: 0 4px 15px rgba(255, 107, 157, 0.4);
-      }
-
-      .btn-secondary {
-        background: transparent;
-        color: var(--text-primary);
-        border: 2px solid rgba(255, 255, 255, 0.3);
-        backdrop-filter: blur(10px);
-      }
-
-      .btn-modern:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 25px rgba(255, 107, 157, 0.6);
-      }
-
-      .btn-secondary:hover {
-        background: rgba(255, 255, 255, 0.1);
-        border-color: rgba(255, 255, 255, 0.6);
-      }
-
-      /* Enhanced sections */
-      section {
-        padding: 5rem 2rem;
-        position: relative;
-      }
-
-      .section-container {
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      /* About section with cards */
-      #about {
-        min-height: auto;
-      }
-
-      .about-grid {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        gap: 3rem;
-        align-items: center;
-      }
-
-      .quote-card {
-        background: var(--glass-bg);
-        backdrop-filter: blur(20px);
-        border: 1px solid var(--glass-border);
-        border-radius: 20px;
-        padding: 2rem;
-        text-align: center;
-        box-shadow: var(--shadow-glow);
-        transition: transform 0.3s ease;
-      }
-
-      .quote-card:hover {
-        transform: translateY(-10px);
-      }
-
-      .quote-text {
-        font-size: 1.1rem;
-        font-style: italic;
-        color: var(--text-secondary);
-        margin-bottom: 1rem;
-        line-height: 1.6;
-      }
-
-      .quote-author {
-        color: var(--text-primary);
-        font-weight: 600;
-      }
-
-      .about-content {
-        color: var(--text-primary);
-      }
-
-      .about-content h2 {
-        font-size: 2.5rem;
-        margin-bottom: 1.5rem;
-        font-weight: 700;
-      }
-
-      .about-content p {
-        font-size: 1.1rem;
-        line-height: 1.8;
-        color: var(--text-secondary);
-      }
-
-      /* Enhanced projects section */
-      #projects {
-        padding: 5rem 2rem;
-      }
-
-      .projects-header {
-        text-align: center;
-        margin-bottom: 3rem;
-      }
-
-      .projects-header h2 {
-        font-size: 2.5rem;
-        color: var(--text-primary);
-        margin-bottom: 1rem;
-        font-weight: 700;
-      }
-
-      .projects-header p {
-        font-size: 1.1rem;
-        color: var(--text-secondary);
-      }
-
-      /* Modern accordion styling */
-      .accordion {
-        border: none;
-        background: transparent;
-      }
-
-      .accordion-item {
-        background: var(--glass-bg);
-        backdrop-filter: blur(20px);
-        border: 1px solid var(--glass-border);
-        border-radius: 15px !important;
-        margin-bottom: 1rem;
-        box-shadow: var(--shadow-glow);
-        overflow: hidden;
-        transition: all 0.3s ease;
-      }
-
-      .accordion-item:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 12px 40px rgba(31, 38, 135, 0.5);
-      }
-
-      .accordion-button {
-        background: transparent !important;
-        border: none !important;
-        color: var(--text-primary) !important;
-        font-weight: 600 !important;
-        font-size: 1.1rem !important;
-        padding: 1.5rem !important;
-        box-shadow: none !important;
-      }
-
-      .accordion-button:focus {
-        box-shadow: none !important;
-        border: none !important;
-      }
-
-      .accordion-button::after {
-        filter: invert(1);
-      }
-
-      .accordion-body {
-        background: rgba(255, 255, 255, 0.05);
-        color: var(--text-secondary) !important;
-        border-top: 1px solid var(--glass-border);
-        line-height: 1.6;
-      }
-
-      /* Contact section */
-      .contact-section {
-        text-align: center;
-        padding: 5rem 2rem;
-        background: var(--glass-bg);
-        backdrop-filter: blur(20px);
-        border-radius: 30px;
-        margin: 2rem;
-        box-shadow: var(--shadow-glow);
-      }
-
-      .contact-section h2 {
-        font-size: 2.5rem;
-        color: var(--text-primary);
-        margin-bottom: 1rem;
-        font-weight: 700;
-      }
-
-      .contact-section p {
-        font-size: 1.2rem;
-        color: var(--text-secondary);
-        margin-bottom: 2rem;
-      }
-
-      .email-button {
-        display: inline-block;
-        padding: 15px 35px;
-        background: var(--accent-gradient);
-        background-size: 200% 200%;
-        border: none;
-        border-radius: 50px;
-        color: var(--text-primary);
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 1rem;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        transition: all 0.4s ease;
-        box-shadow: 0 6px 20px rgba(255, 107, 157, 0.4);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .email-button::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-        transition: left 0.6s;
-      }
-
-      .email-button:hover {
-        transform: translateY(-5px) scale(1.05);
-        box-shadow: 0 10px 30px rgba(255, 107, 157, 0.6);
-        animation: gradient-shift 2s ease infinite;
-      }
-
-      .email-button:hover::before {
-        left: 100%;
-      }
-
-      @keyframes gradient-shift {
-        0%, 100% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-      }
-
-      /* Animations */
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .fade-in {
-        animation: fadeInUp 0.6s ease-out forwards;
-      }
-
-      /* Responsive design */
-      @media (max-width: 768px) {
-        .navbar {
-          width: 95%;
-          padding: 15px 20px;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .navbar ul {
-          gap: 1rem;
+        body {
+            font-family: 'Baskervville', serif;
+            background: white;
+            color: #333;
+            line-height: 1.6;
+            font-size: 16px;
         }
 
-        .about-grid {
-          grid-template-columns: 1fr;
-          gap: 2rem;
+        .header {
+            padding: 4rem 2rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid #eee;
         }
 
-        .cta-buttons {
-          flex-direction: column;
-          align-items: center;
+        .title {
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: #333;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
         }
 
-        .btn-modern {
-          width: 100%;
-          max-width: 300px;
+        .subtitle {
+            font-size: 1rem;
+            color: #666;
+            font-style: italic;
         }
-      }
+
+        .main-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .rulers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin: 3rem 0;
+        }
+
+        .ruler-card {
+            background: white;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .ruler-card:hover {
+            border-color: #999;
+        }
+
+        .ruler-portrait {
+            width: 100%;
+            height: 200px;
+            background: #f8f8f8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #999;
+            border-bottom: 1px solid #eee;
+        }
+
+        .ruler-info {
+            padding: 1.5rem;
+        }
+
+        .ruler-name {
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: #333;
+            margin-bottom: 0.3rem;
+        }
+
+        .ruler-title {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+            font-style: italic;
+        }
+
+        .ruler-dates {
+            font-size: 0.85rem;
+            color: #999;
+            margin-bottom: 1rem;
+        }
+
+        .ruler-description {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .ruler-page {
+            display: none;
+            max-width: 700px;
+            margin: 2rem auto;
+            padding: 2rem;
+        }
+
+        .ruler-page.active {
+            display: block;
+        }
+
+        .back-button {
+            background: none;
+            border: 1px solid #ddd;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-family: 'Baskervville', serif;
+            cursor: pointer;
+            margin-bottom: 3rem;
+            transition: all 0.2s ease;
+            color: #666;
+        }
+
+        .back-button:hover {
+            border-color: #999;
+            color: #333;
+        }
+
+        .ruler-page-portrait {
+            width: 150px;
+            height: 180px;
+            background: #f8f8f8;
+            border: 1px solid #eee;
+            float: left;
+            margin: 0 2rem 1rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #999;
+        }
+
+        .ruler-page-title {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .ruler-page-content {
+            font-size: 1rem;
+            color: #444;
+            line-height: 1.7;
+        }
+
+        .ruler-page-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .ruler-page-content h3 {
+            color: #333;
+            margin: 2rem 0 1rem 0;
+            font-size: 1.2rem;
+            font-weight: 400;
+        }
+
+        .footer {
+            border-top: 1px solid #eee;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2rem;
+            }
+            
+            .main-content {
+                padding: 2rem 1rem;
+            }
+
+            .ruler-page-portrait {
+                float: none;
+                margin: 0 auto 2rem auto;
+                display: block;
+            }
+        }
     </style>
-  </head>
-  <body>
-    <!-- Animated particles -->
-    <div class="particles">
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-    </div>
+</head>
+<body>
+    <header class="header">
+        <h1 class="title">18th Century Monarchs</h1>
+        <p class="subtitle">European Rulers of the Age of Enlightenment</p>
+    </header>
 
-    <!-- Hero Section -->
-    <div class="banner">
-      <div class="navbar">
-        <img class="logo" src="https://static.cdnlogo.com/logos/p/30/pink.svg" alt="Logo" />
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+    <nav class="navigation">
+        <ul class="nav-menu">
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#rulers" class="nav-link">Monarchs</a></li>
+            <li><a href="#timeline" class="nav-link">Timeline</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
         </ul>
-      </div>
-      
-      <div class="content">
-        <h1>Hi there, I'm Sandra</h1>
-        <p class="subtitle">
-          Software Engineer & Creative Problem Solver<br>
-          Currently studying at Moringa School, passionate about bringing ideas to life through code
-        </p>
-        <div class="cta-buttons">
-          <a href="#projects" class="btn-modern btn-primary">View My Work</a>
-          <a href="#contact" class="btn-modern btn-secondary">Let's Connect</a>
-        </div>
-      </div>
-    </div>
+    </nav>
 
-    <!-- About Section -->
-    <section id="about">
-      <div class="section-container">
-        <div class="about-grid">
-          <div class="quote-card">
-            <p class="quote-text">
-              "The best solutions come from curiosity, patience, and a willingness to learn"
-            </p>
-            <p class="quote-author">~ Sandra's Philosophy</p>
-          </div>
-          <div class="about-content">
-            <h2>About Me</h2>
-            <p>
-              I'm a software engineer with a passion for bringing ideas to life through code. 
-              Currently diving deep into HTML, CSS, and JavaScript, I love the process of 
-              transforming concepts into interactive, user-friendly experiences.
-            </p>
-            <br>
-            <p>
-              When I'm not coding, you'll likely find me solving challenging crosswords or 
-              spending quality time with the people who matter most. I believe great 
-              development comes from understanding both technology and human needs.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <main class="main-content">
+        <div id="home-content">
+            <div class="rulers-grid">
+                <div class="ruler-card" onclick="showRulerPage('louis-xiv')">
+                    <div class="ruler-portrait">👤</div>
+                    <div class="ruler-info">
+                        <h3 class="ruler-name">Louis XIV</h3>
+                        <p class="ruler-title">King of France</p>
+                        <p class="ruler-dates">1643 - 1715</p>
+                        <p class="ruler-description">The Sun King who epitomized absolute monarchy and created the Palace of Versailles.</p>
+                    </div>
+                </div>
 
-    <!-- Projects Section -->
-    <section id="projects">
-      <div class="section-container">
-        <div class="projects-header">
-          <h2>My Projects</h2>
-          <p>Explore my journey through code and creativity</p>
-        </div>
-        
-        <div class="accordion" id="projectsAccordion">
-          <div class="accordion-item">
-            <h2 class="accordion-header">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" 
-                      data-bs-target="#project1" aria-expanded="true">
-                Portfolio Website
-              </button>
-            </h2>
-            <div id="project1" class="accordion-collapse collapse show">
-              <div class="accordion-body">
-                <strong>Modern Portfolio with Glassmorphism Design</strong><br>
-                Built with HTML5, CSS3, and JavaScript featuring responsive design, 
-                smooth animations, and modern glassmorphism effects. This project 
-                showcases my frontend development skills and attention to user experience.
-                <br><br>
-                <em>Technologies: HTML, CSS, JavaScript, Bootstrap</em>
-              </div>
+                <div class="ruler-card" onclick="showRulerPage('marie-antoinette')">
+                    <div class="ruler-portrait">👸</div>
+                    <div class="ruler-info">
+                        <h3 class="ruler-name">Marie Antoinette</h3>
+                        <p class="ruler-title">Queen of France</p>
+                        <p class="ruler-dates">1770 - 1792</p>
+                        <p class="ruler-description">Austrian-born queen whose reign ended with the French Revolution.</p>
+                    </div>
+                </div>
+
+                <div class="ruler-card" onclick="showRulerPage('frederick-great')">
+                    <div class="ruler-portrait">🤴</div>
+                    <div class="ruler-info">
+                        <h3 class="ruler-name">Frederick the Great</h3>
+                        <p class="ruler-title">King of Prussia</p>
+                        <p class="ruler-dates">1740 - 1786</p>
+                        <p class="ruler-description">Military genius and patron of the arts who transformed Prussia into a major power.</p>
+                    </div>
+                </div>
+
+                <div class="ruler-card" onclick="showRulerPage('catherine-great')">
+                    <div class="ruler-portrait">👑</div>
+                    <div class="ruler-info">
+                        <h3 class="ruler-name">Catherine the Great</h3>
+                        <p class="ruler-title">Empress of Russia</p>
+                        <p class="ruler-dates">1762 - 1796</p>
+                        <p class="ruler-description">German-born empress who expanded Russian territory and embraced Enlightenment ideals.</p>
+                    </div>
+                </div>
+
+                <div class="ruler-card" onclick="showRulerPage('maria-theresa')">
+                    <div class="ruler-portrait">👸</div>
+                    <div class="ruler-info">
+                        <h3 class="ruler-name">Maria Theresa</h3>
+                        <p class="ruler-title">Archduchess of Austria</p>
+                        <p class="ruler-dates">1740 - 1780</p>
+                        <p class="ruler-description">Only female ruler of the Habsburg dominions who modernized Austria.</p>
+                    </div>
+                </div>
+
+                <div class="ruler-card" onclick="showRulerPage('george-iii')">
+                    <div class="ruler-portrait">🤴</div>
+                    <div class="ruler-info">
+                        <h3 class="ruler-name">George III</h3>
+                        <p class="ruler-title">King of Great Britain</p>
+                        <p class="ruler-dates">1760 - 1820</p>
+                        <p class="ruler-description">British monarch who lost the American colonies but oversaw industrial growth.</p>
+                    </div>
+                </div>
             </div>
-          </div>
-          
-          <div class="accordion-item">
-            <h2 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
-                      data-bs-target="#project2">
-                Korean Learning Game
-              </button>
-            </h2>
-            <div id="project2" class="accordion-collapse collapse">
-              <div class="accordion-body">
-                <strong>Interactive Educational Game</strong><br>
-                Developed using C# and Unity to create an engaging Korean language learning 
-                experience. Features include interactive lessons, progress tracking, and 
-                gamified learning elements to make language acquisition fun and effective.
-                <br><br>
-                <em>Technologies: C#, Unity, Game Development</em>
-              </div>
-            </div>
-          </div>
-          
-          <div class="accordion-item">
-            <h2 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
-                      data-bs-target="#project3">
-                Japanese Learning Platform
-              </button>
-            </h2>
-            <div id="project3" class="accordion-collapse collapse">
-              <div class="accordion-body">
-                <strong>Comprehensive Language Learning System</strong><br>
-                A full-featured Japanese learning platform with multiple learning modes, 
-                character recognition, pronunciation practice, and adaptive difficulty. 
-                Designed with user engagement and educational effectiveness in mind.
-                <br><br>
-                <em>Technologies: JavaScript, React, Educational Technology</em>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-      <div class="contact-section">
-        <h2>Let's Connect</h2>
-        <p>I'm always excited to collaborate on new projects and discuss innovative ideas</p>
-        <a href="mailto:sandra.manyarkiy@gmail.com" class="email-button">
-          Get In Touch
-        </a>
-        <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.7;">
-          sandra.manyarkiy@gmail.com
-        </p>
-      </div>
-    </section>
+        <!-- Individual Ruler Pages -->
+        <div id="louis-xiv-page" class="ruler-page">
+            <button class="back-button" onclick="showHome()">← Back</button>
+            <div class="ruler-page-portrait">👤</div>
+            <h2 class="ruler-page-title">Louis XIV</h2>
+            <div class="ruler-page-content">
+                <p>Louis XIV of France (1638-1715) reigned for 72 years, making him one of the longest-serving monarchs in European history. Known as the Sun King, he epitomized absolute monarchy.</p>
+                
+                <h3>Early Reign</h3>
+                <p>Born to Louis XIII and Anne of Austria, Louis became king at age four. His minority was marked by the regency of his mother and Cardinal Mazarin, during which civil wars tested royal authority.</p>
+                
+                <h3>Absolute Power</h3>
+                <p>Louis XIV centralized power and diminished the nobility's political influence. He established a complex court system that made aristocrats dependent on royal favor.</p>
+                
+                <h3>Versailles</h3>
+                <p>The construction of the Palace of Versailles became the seat of political power and a symbol of French grandeur. The court set the standard for European fashion and cultural refinement.</p>
+                
+                <h3>Legacy</h3>
+                <p>His military campaigns established France as Europe's premier land power, though later wars strained the kingdom's finances and contributed to future revolutionary pressures.</p>
+            </div>
+        </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"></script>
-    
+        <div id="marie-antoinette-page" class="ruler-page">
+            <button class="back-button" onclick="showHome()">← Back</button>
+            <div class="ruler-page-portrait">👸</div>
+            <h2 class="ruler-page-title">Marie Antoinette</h2>
+            <div class="ruler-page-content">
+                <p>Marie Antoinette (1755-1793) was the last Queen of France before the French Revolution. Born Archduchess Maria Antonia of Austria, she became a symbol of royal excess.</p>
+                
+                <h3>Marriage Alliance</h3>
+                <p>At age 14, Marie Antoinette married the future Louis XVI to seal an alliance between Austria and France. The marriage was initially difficult and politically motivated.</p>
+                
+                <h3>Court Life</h3>
+                <p>The Queen's love of fashion and elaborate festivities earned her the nickname "Madame Déficit." Her lifestyle was seen as frivolous during France's financial crisis.</p>
+                
+                <h3>Revolution</h3>
+                <p>As the French Revolution began, she became a focal point of anti-monarchist sentiment. Her alleged foreign sympathies made her particularly unpopular with revolutionaries.</p>
+                
+                <h3>End</h3>
+                <p>After the monarchy's fall, Marie Antoinette was imprisoned, tried for treason, and executed by guillotine in 1793, marking the definitive end of the Ancien Régime.</p>
+            </div>
+        </div>
+
+        <div id="frederick-great-page" class="ruler-page">
+            <button class="back-button" onclick="showHome()">← Back</button>
+            <div class="ruler-page-portrait">🤴</div>
+            <h2 class="ruler-page-title">Frederick the Great</h2>
+            <div class="ruler-page-content">
+                <p>Frederick II of Prussia (1712-1786) transformed Prussia from a modest kingdom into a major European power through military genius and Enlightenment ideals.</p>
+                
+                <h3>Early Life</h3>
+                <p>Son of the strict Frederick William I, young Frederick showed more interest in philosophy and French culture than military affairs, causing tension with his father.</p>
+                
+                <h3>Military Success</h3>
+                <p>Frederick's invasion of Silesia began his reputation as a strategist. The Seven Years' War saw him fighting a coalition of major powers and emerging victorious.</p>
+                
+                <h3>Enlightened Rule</h3>
+                <p>Frederick embodied enlightened despotism, implementing religious tolerance, judicial reform, and promoting education. He abolished torture and promoted merit-based advancement.</p>
+                
+                <h3>Cultural Patron</h3>
+                <p>An accomplished flutist and composer, Frederick founded academies and corresponded with leading thinkers. His court became a center of intellectual activity.</p>
+            </div>
+        </div>
+
+        <div id="catherine-great-page" class="ruler-page">
+            <button class="back-button" onclick="showHome()">← Back</button>
+            <div class="ruler-page-portrait">👑</div>
+            <h2 class="ruler-page-title">Catherine the Great</h2>
+            <div class="ruler-page-content">
+                <p>Catherine II (1729-1796), born a German princess, became one of Russia's most powerful rulers, expanding the empire while promoting Enlightenment ideals.</p>
+                
+                <h3>Rise to Power</h3>
+                <p>Catherine married the future Peter III in 1745. After her husband's brief, unpopular reign, she orchestrated a coup in 1762 that brought her to power.</p>
+                
+                <h3>Expansion</h3>
+                <p>Catherine's reign saw massive territorial expansion, particularly southward. Her wars against the Ottoman Empire secured access to the Black Sea and gained Crimea.</p>
+                
+                <h3>Reforms</h3>
+                <p>Influenced by Enlightenment philosophy, Catherine attempted legal reform and reorganized provincial administration, though maintaining autocracy and serfdom.</p>
+                
+                <h3>Culture</h3>
+                <p>Catherine established the Hermitage collection, founded schools, and promoted arts. She corresponded with Voltaire and Diderot, presenting herself as an enlightened ruler.</p>
+            </div>
+        </div>
+
+        <div id="maria-theresa-page" class="ruler-page">
+            <button class="back-button" onclick="showHome()">← Back</button>
+            <div class="ruler-page-portrait">👸</div>
+            <h2 class="ruler-page-title">Maria Theresa</h2>
+            <div class="ruler-page-content">
+                <p>Maria Theresa (1717-1780) was the only female ruler of the Habsburg dominions and one of the most important monarchs in Austrian history.</p>
+                
+                <h3>Succession</h3>
+                <p>When her father Charles VI died in 1740, Maria Theresa inherited the Habsburg territories. Her succession triggered the War of Austrian Succession.</p>
+                
+                <h3>Modernization</h3>
+                <p>Maria Theresa implemented reforms that modernized Austria's government, military, and education. She centralized administration and created a merit-based civil service.</p>
+                
+                <h3>Religious Policy</h3>
+                <p>A devout Catholic, Maria Theresa promoted religious unity while showing some tolerance. She later moderated harsh policies for practical economic reasons.</p>
+                
+                <h3>Marriage Diplomacy</h3>
+                <p>Through strategic marriages of her sixteen children, Maria Theresa sought to strengthen Austria's position. Her daughter Marie Antoinette married Louis XVI of France.</p>
+            </div>
+        </div>
+
+        <div id="george-iii-page" class="ruler-page">
+            <button class="back-button" onclick="showHome()">← Back</button>
+            <div class="ruler-page-portrait">🤴</div>
+            <h2 class="ruler-page-title">George III</h2>
+            <div class="ruler-page-content">
+                <p>George III (1738-1820) ruled Great Britain for nearly 60 years during revolutionary change. His reign saw the loss of America but Britain's rise as a global power.</p>
+                
+                <h3>American Crisis</h3>
+                <p>Ascending the throne in 1760, George III's policies toward American colonies, including taxation measures, led to resistance and ultimately the American Revolution.</p>
+                
+                <h3>Constitutional Role</h3>
+                <p>George III was the last British monarch to actively govern, though he gradually accepted constitutional limitations and parliamentary governance.</p>
+                
+                <h3>Mental Health</h3>
+                <p>From 1788, George III suffered recurring episodes of mental illness. These led to regency crises and ultimately his son's appointment as Prince Regent in 1811.</p>
+                
+                <h3>Industrial Age</h3>
+                <p>Despite political challenges, his reign coincided with the Industrial Revolution. He earned the nickname "Farmer George" for his interest in agricultural innovation.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 18th Century Monarchs</p>
+    </footer>
+
     <script>
-      // Smooth scrolling for navigation links
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute('href'));
-          if (target) {
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
+        function showRulerPage(rulerId) {
+            document.getElementById('home-content').style.display = 'none';
+            
+            const rulerPages = document.querySelectorAll('.ruler-page');
+            rulerPages.forEach(page => page.classList.remove('active'));
+            
+            const targetPage = document.getElementById(rulerId + '-page');
+            if (targetPage) {
+                targetPage.classList.add('active');
+            }
+            
+            window.scrollTo(0, 0);
+        }
+
+        function showHome() {
+            const rulerPages = document.querySelectorAll('.ruler-page');
+            rulerPages.forEach(page => page.classList.remove('active'));
+            
+            document.getElementById('home-content').style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+
+        // Navigation handling
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const href = link.getAttribute('href');
+                
+                if (href === '#home') {
+                    showHome();
+                } else if (href === '#rulers') {
+                    showHome();
+                    setTimeout(() => {
+                        const rulersGrid = document.querySelector('.rulers-grid');
+                        if (rulersGrid) {
+                            rulersGrid.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    }, 100);
+                } else {
+                    showHome();
+                }
+            });
         });
-      });
-
-      // Add fade-in animation on scroll
-      const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-      };
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in');
-          }
-        });
-      }, observerOptions);
-
-      document.querySelectorAll('section').forEach(section => {
-        observer.observe(section);
-      });
     </script>
-  </body>
+</body>
 </html>
